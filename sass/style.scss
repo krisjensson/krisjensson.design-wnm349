@@ -1,0 +1,166 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import 'compass/reset';
+@import 'compass';
+@import 'susy';
+@import 'breakpoint';
+
+//------------------------------------- COLORS
+$colorBase: #05f;
+$colorDark: darken($colorBase, 25%);
+$colorLight: lighten($colorBase, 20%);
+$colorVeryLight: lighten($colorBase, 80%);
+$fontSize: 10px;
+//------------------------------------- GRID
+$susy: (
+  columns: 12,
+  gutters: 0.25
+);
+$spacing: 20px;
+//------------------------------------- BREAKPOINTS
+$small: 500px;
+$medium: 800px;
+$large: 1024px;
+
+// box-size everything
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  @include container(95%);
+  background: $colorVeryLight;
+  @include breakpoint($small) {
+    background: #f1a834;
+  }
+  @include breakpoint($medium) {
+    background: #f1a834;
+    @include container(90%);
+  }
+  @include breakpoint($large) {
+    background: #f1a834;
+    @include container(85%);
+  }
+}
+
+header {
+  @include container(100%)
+
+}
+
+h1 {
+    color: $colorVeryLight;
+  }
+}
+h1 {
+  font: 300 $fontSize * 4.6 'lato', sans-serif;
+  color: $colorDark;
+  margin: $spacing 0;
+  white-space: nowrap;
+}
+h2 {
+  font: 300 $fontSize * 2.6 'lato', sans-serif;
+  color: $colorVeryLight;
+  margin-bottom: $spacing / 2;
+}
+h3 {
+  @extend h2;
+  font-size: $fontSize * 2.3;
+}
+p {
+  font: 300 $fontSize * 2 'lato', sans-serif;
+  color: $colorDark;
+  line-height: $fontSize * 3;
+  margin-bottom: $spacing;
+}
+.main {
+  margin-bottom: $spacing;
+  @include span(12);
+
+  @include breakpoint($medium) {
+    @include span(8);
+  }
+}
+aside {
+  @include span(12);
+  padding: $spacing;
+  background: $colorDark * 3;
+  margin-top: $spacing * 5.2;
+  margin-bottom: $spacing;
+  @include border-radius(5px);
+  p {
+    font: 300 $fontSize * 1.8 'lato', sans-serif;
+    color: $colorVeryLight;
+    line-height: $fontSize * 2.8;
+  }
+  @include breakpoint($medium) {
+    @include span(4 at 9);
+  }
+}
+.feature-1 {
+  @include span(12);
+  padding: $spacing;
+  background: $colorDark * 3;
+  margin-bottom: $spacing;
+  @include border-radius(5px);
+  p {
+    font: 300 $fontSize * 1.8 'lato', sans-serif;
+    color: $colorVeryLight;
+    line-height: $fontSize * 2.8;
+  }
+  @include breakpoint($medium) {
+    @include span(6);
+  }
+  @include breakpoint($large) {
+    @include span(4);
+  }
+}
+.feature-2 {
+  @extend .feature-1;
+  @include span(12);
+  @include breakpoint($medium) {
+    @include span(6 at 7);
+  }
+  @include breakpoint($large) {
+    @include span(4 at 5);
+  }
+}
+.feature-3 {
+  @extend .feature-1;
+  @include span(12);
+  @include breakpoint($large) {
+    @include span(4 at 9);
+  }
+}
+
+.middle-span {
+  @extend .feature-1;
+  @include span(12);
+  @include breakpoint($large) {
+    @include span(4 at 9);
+  }
+}
+
+.com1 {
+  @include span(12);
+  padding: $spacing;
+  background: $colorDark * 3;
+  margin-bottom: $spacing;
+  @include border-radius(5px);
+  p {
+    font: 300 $fontSize * 1.8 'lato', sans-serif;
+    color: $colorVeryLight;
+    line-height: $fontSize * 2.8;
+  }
+  @include breakpoint($medium) {
+    @include span(8);
+  }
+  @include breakpoint($large) {
+    @include span(6);
+  }
